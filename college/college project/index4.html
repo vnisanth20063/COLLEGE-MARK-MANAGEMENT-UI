@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>   
+</head>
+<body>
+    </div>
+        <div class="banner">
+          <div class="slider" style="--quantity: 7">
+            <div class="item" style="--position: 1"><a href="cse.html"><img src="Cse department.png" alt=""></div></a>
+            <div class="item" style="--position: 2"><a href="Aids.html"><img src="Aids1 department.png" alt=""></div></a>
+            <div class="item" style="--position: 3"> <a href="It.html"><img src="It1 department.png" alt=""></div></a>
+            <div class="item" style="--position: 4"> <a href="Bme.html"><img src="Bme department.png" alt=""></div></a>
+            <div class="item" style="--position: 5"> <a href="Eee.html"><img src="Eee department.png" alt=""></div></a>
+            <div class="item" style="--position: 6"> <a href="Ece.html"><img src="Ece department.png" alt=""></div></a>
+            <div class="item" style="--position: 7"> <a href="mechanical.html"><img src="Mechanical department.png" alt=""></div></a>
+        </div>
+        <div class="model"></div>
+    </div>
+<style>
+body{
+    background-image: url(sample1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+img{
+    max-width: 200px;
+    height: 100px;
+    border-radius: 20px;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left:calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 1;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-6deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-6deg) rotateY(360deg);
+    }
+}
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(550px);
+}
+.banner .slider .item img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+}
+.banner .model{
+    background-image: url(sample3.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+</style>
+</body>
+</html>
